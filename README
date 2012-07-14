@@ -1,1 +1,33 @@
 This is a framework I am working on for Node.js based ecommerce
+
+Please be patient I am new to Node and it may take me a bit to get everything 100%
+
+
+Example
+
+Paypal Integration
+
+var paypal = require('bullettrain').use('paypal');
+exports.addApp = function(appServer){
+  app = appServer;
+  paypal.setApp(app)
+}
+
+
+exports.setExpressCheckout = function(req, res){
+  paypal.setExpressCheckout(req,res);
+}
+
+
+exports.getCheckoutDetails = function(req, res, next){
+  paypal.getCheckoutDetails(req,res,next)
+}
+
+exports.finalizePayment = function(req, res){
+  paypal.finalizePayment(req,res)
+}
+
+Mongo/RESTi(ish) Integration
+
+bullet = require('./lib/bullettrain').useRest('mongo')
+app.post('/rest/catalogentries', bullet.postCatalogEntry,routes.goHome);
