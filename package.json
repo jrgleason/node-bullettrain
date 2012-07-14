@@ -37,5 +37,5 @@
   "bundleDependencies": [],
 
   "private": true,
-  "main": "app.js"
+  "main": "./lib/paynode.js"
 }
