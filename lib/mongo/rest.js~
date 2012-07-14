@@ -1,6 +1,0 @@
-//SECTION: Catalog Entry
-
-var catalogEntryProvider = require('./item').ItemProvider;
-var catalogEntryProvider = new itemProvider();
-
-
