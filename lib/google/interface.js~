@@ -50,6 +50,7 @@ exports.addProduct = function(req, res,next){
         res.body += chunk;
       });
       res.on('end', function() {
+        console.log("response="+JSON.stringify(res.body))
         var response = querystring.parse(res.body);
         return next();
       });
@@ -124,42 +125,8 @@ exports.getProducts = function(req, res, next){
     });
     res.on('end', function() {
       req.feed = JSON.parse(res.body).feed
-      console.log("The feed is:"+JSON.stringify(req.feed))
-      return next()
+      return next();
     });
   });
   post_req.end();
-}
-
-exports.getProduct = function(req, res, next){
-  var mainRes = res
-  var post_params = querystring.stringify({})
-  if(req.body.entryId){
-    var post_options = {
-      host: 'content.googleapis.com',
-      port: '443',
-      path: '/content/v1/8076653/items/products/schema/online:en:US:id'+entryId+'?alt=json',
-      method: 'GET',
-      headers: {
-        'Authorization': 'GoogleLogin Auth='+req.token
-      }
-    };
-    var post_req = https.request(post_options, function(res) {
-      res.setEncoding('utf8');
-      res.body = '';
-      res.on('data', function (chunk) {
-        res.body += chunk;
-      });
-      res.on('end', function() {
-        //req = JSON.parse(res.body)
-        console.log("Got Product Response:"+res.body);
-        return next();
-      });
-    });
-    post_req.end();
-  }
-  else{
-    //TODO handle
-    return next()
-  }
 }
