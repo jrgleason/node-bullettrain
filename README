@@ -5,6 +5,8 @@ Please be patient I am new to Node and it may take me a bit to get everything 10
 
 Example
 
+A full integration example can be found here... https://simplecart-jgleason.rhcloud.com. Please remember this is in development
+
 Paypal Integration
 
 var paypal = require('bullettrain').use('paypal');
