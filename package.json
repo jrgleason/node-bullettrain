@@ -1,6 +1,6 @@
 {
   "name": "bullettrain",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Simple Ecommerce",
   "keywords": [
     "OpenShift",
@@ -31,7 +31,9 @@
     "paynode":"*",
     "mongodb":"*",
     "gridfs-stream":"*",
-    "node-uuid":"*"
+    "node-uuid":"*",
+    "passport":"*",
+    "passport-google":"*"
   },
   "devDependencies": {},
   "bundleDependencies": [],

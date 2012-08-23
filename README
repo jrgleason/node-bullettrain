@@ -33,3 +33,14 @@ Mongo/RESTi(ish) Integration
 
 bullet = require('./lib/bullettrain').useRest('mongo')
 app.post('/rest/catalogentries', bullet.postCatalogEntry,routes.goHome);
+
+
+Google OAuth v2 (With ExpressJS)
+
+google = require('bullettrain').useInterface('google')
+google.setClientId(GOOGLE_CLIENT_ID)
+google.setClientSecret(GOOGLE_CLIENT_SECRET)
+
+app.get('/auth/google', google.requestCode)
+app.get('/auth/google/callback', google.callbackHandler, google.getUserInformation, routes.goHome)
+

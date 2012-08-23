@@ -1,0 +1,11 @@
+var passportProvider = require('./oauth').PassportProvider,
+    passportProvider = new PassportProvider(),
+
+exports.requestToken = function(callback){
+  passportProvider.requestToken(callback)
+}
+
+exports.callback = function(req, res) {
+   passportProvider.callback(req,res)
+}
+
